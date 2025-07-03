@@ -11,7 +11,7 @@ export const Slide8 = () => {
 			className="bg-yellow-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				7. Tăng Tốc Với AI
+				8. Tăng Tốc Với AI
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-8 items-center mt-16">

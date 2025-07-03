@@ -11,8 +11,8 @@ export const chartData = {
 		data: [30, 20, 15, 15, 10, 10],
 	},
 	chatGPTGrowth: {
-		labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6"],
-		data: [1, 10, 30, 60, 80, 100], // Data in millions of users
+		labels: ["Tuần 1-2", "Tuần 3-4", "Tuần 5-6", "Tuần 7-8"],
+		data: [5, 25, 60, 100], // Data in millions of users - 2 months total
 	},
 	timeSaving: {
 		labels: [

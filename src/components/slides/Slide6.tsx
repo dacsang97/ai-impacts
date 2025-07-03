@@ -4,12 +4,12 @@ import { SlideLayout } from "../ui/SlideLayout";
 export const Slide6 = () => {
 	return (
 		<SlideLayout
-			title="AI: Trợ Thủ Đắc Lực Trong Quy Trình Phát Triển (Tiếp theo)"
+			title="AI: Trợ Thủ Đắc Lực Trong Quy Trình Phát Triển"
 			subtitle="AI tiếp tục hỗ trợ trong các giai đoạn cuối của vòng đời phát triển phần mềm, giúp đảm bảo sự ổn định và hiệu suất."
 			className="bg-yellow-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				5. AI Giúp Ích Ở Đâu? (Phần 2)
+				6. AI Giúp Ích Ở Đâu
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-8 items-center mt-16">

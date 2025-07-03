@@ -11,7 +11,7 @@ export const Slide4 = () => {
 			className="bg-yellow-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				3. Công Việc Kỹ Sư
+				4. Công Việc Kỹ Sư
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-8 items-center mt-16">

@@ -4,7 +4,7 @@ export const Slide15 = () => {
 	return (
 		<SlideLayout className="bg-gray-50">
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				14. Kết Luận
+				15. Kết Luận
 			</div>
 
 			<div className="text-center">

@@ -9,7 +9,7 @@ export const Slide9 = () => {
 			className="bg-gray-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				8. Quy Trình Kỹ Thuật Mới
+				9. Quy Trình Kỹ Thuật Mới
 			</div>
 
 			<div className="mt-20">
@@ -22,7 +22,7 @@ export const Slide9 = () => {
 						<h4 className="font-bold text-lg mb-4 text-center">
 							Quy trình cũ: Tuần tự
 						</h4>
-						<div className="space-y-4 flex flex-col items-center">
+						<div className="space-y-6 flex flex-col items-center">
 							<div className="flow-step w-4/5 flow-arrow">Thiết kế</div>
 							<div className="flow-step w-4/5 flow-arrow">Code</div>
 							<div className="flow-step w-4/5 flow-arrow">Test</div>

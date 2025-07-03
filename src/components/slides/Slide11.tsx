@@ -9,7 +9,7 @@ export const Slide11 = () => {
 			className="bg-gray-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				10. Phá Vỡ Rào Cản Sản Phẩm & Kỹ Thuật
+				11. Phá Vỡ Rào Cản Sản Phẩm & Kỹ Thuật
 			</div>
 
 			<div className="mt-16">

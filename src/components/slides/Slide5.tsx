@@ -9,7 +9,7 @@ export const Slide5 = () => {
 			className="bg-gray-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				4. AI Giúp Ích Ở Đâu? (Phần 1)
+				5. AI Giúp Ích Ở Đâu
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-8 mt-16">

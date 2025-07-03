@@ -3,6 +3,9 @@ import { SlideLayout } from "../ui/SlideLayout";
 export const Slide16 = () => {
 	return (
 		<SlideLayout className="bg-yellow-50">
+			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
+				16. Cảm Ơn!
+			</div>
 			<div className="text-center">
 				<h1 className="text-5xl font-extrabold text-gray-900 mb-8">Cảm Ơn!</h1>
 				<p className="text-2xl text-gray-600 mb-12">

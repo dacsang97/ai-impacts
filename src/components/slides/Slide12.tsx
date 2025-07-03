@@ -9,7 +9,7 @@ export const Slide12 = () => {
 			className="bg-gray-50"
 		>
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
-				11. AI Cần Gì Từ Tổ Chức?
+				12. AI Cần Gì Từ Tổ Chức?
 			</div>
 
 			<div className="mt-16 grid md:grid-cols-2 gap-8">

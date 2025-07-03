@@ -27,16 +27,18 @@ body {
 	border: 1px solid #e0e0e0;
 	border-radius: 9999px;
 	text-align: center;
+	margin-bottom: 1rem;
 }
 
 .flow-arrow::after {
-	content: "→";
+	content: "↓";
 	position: absolute;
-	right: -1.5rem;
-	top: 50%;
-	transform: translateY(-50%);
+	left: 50%;
+	bottom: -2rem;
+	transform: translateX(-50%);
 	font-size: 1.5rem;
 	color: #9ca3af;
+	z-index: 10;
 }
 
 .knowledge-box {
