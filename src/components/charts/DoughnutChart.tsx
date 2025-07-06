@@ -39,6 +39,24 @@ export const DoughnutChart = ({
 					},
 				},
 			},
+			datalabels: {
+				color: "#fff",
+				font: {
+					weight: "bold",
+					size: 14,
+				},
+				formatter: (
+					value: number,
+					context: { dataset: { data: number[] } },
+				) => {
+					const total = context.dataset.data.reduce(
+						(a: number, b: number) => a + b,
+						0,
+					);
+					const percentage = ((value / total) * 100).toFixed(0);
+					return `${percentage}%`;
+				},
+			},
 		},
 	};
 

@@ -8,6 +8,7 @@ import {
 	Title,
 	Tooltip,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(
 	CategoryScale,
@@ -17,6 +18,7 @@ ChartJS.register(
 	Tooltip,
 	Legend,
 	ArcElement,
+	ChartDataLabels,
 );
 
 export default ChartJS;
