@@ -9,8 +9,42 @@ export const Navigation = () => {
 	const params = useParams({ strict: false });
 	const currentSlide = Number((params as { slideId?: string }).slideId) || 0;
 
-	const prevSlide = currentSlide > 0 ? currentSlide - 1 : null;
-	const nextSlide = currentSlide < TOTAL_SLIDES - 1 ? currentSlide + 1 : null;
+	// Custom navigation logic for new slides
+	const getNextSlide = (current: number) => {
+		if (current === 5) return 51;
+		if (current === 51) return 52;
+		if (current === 52) return 53;
+		if (current === 53) return 6;
+		if (current < TOTAL_SLIDES - 1) return current + 1;
+		return null;
+	};
+
+	const getPrevSlide = (current: number) => {
+		if (current === 6) return 53;
+		if (current === 53) return 52;
+		if (current === 52) return 51;
+		if (current === 51) return 5;
+		if (current > 0) return current - 1;
+		return null;
+	};
+
+	const prevSlide = getPrevSlide(currentSlide);
+	const nextSlide = getNextSlide(currentSlide);
+
+	// Calculate total slides including new ones
+	const getTotalSlides = () => {
+		return TOTAL_SLIDES + 3; // Adding slides 51, 52, 53
+	};
+
+	// Get current position in sequence
+	const getCurrentPosition = (current: number) => {
+		if (current <= 5) return current + 1;
+		if (current === 51) return 7; // After slide 5
+		if (current === 52) return 8; // After slide 51
+		if (current === 53) return 9; // After slide 52
+		if (current >= 6) return current + 4; // Adjust for 3 inserted slides
+		return current + 1;
+	};
 
 	const [showHint, setShowHint] = useState(true);
 
@@ -73,7 +107,7 @@ export const Navigation = () => {
 					event.preventDefault();
 					navigate({
 						to: "/slide/$slideId",
-						params: { slideId: String(TOTAL_SLIDES - 1) },
+						params: { slideId: "16" },
 					});
 					break;
 			}
@@ -104,8 +138,8 @@ export const Navigation = () => {
 						}
 						className="p-2 rounded-full hover:bg-orange-100 transition text-gray-700 focus:outline-none"
 						title="Về mục lục"
+						aria-label="Về mục lục"
 					>
-						<span className="sr-only">Về mục lục</span>
 						<svg
 							width="22"
 							height="22"
@@ -114,6 +148,7 @@ export const Navigation = () => {
 							stroke="currentColor"
 							strokeWidth="2"
 						>
+							<title>Về mục lục</title>
 							<line x1="5" y1="7" x2="19" y2="7" />
 							<line x1="5" y1="12" x2="19" y2="12" />
 							<line x1="5" y1="17" x2="19" y2="17" />
@@ -135,7 +170,7 @@ export const Navigation = () => {
 					</button>
 
 					<span className="text-base font-medium text-gray-600">
-						{currentSlide + 1}/{TOTAL_SLIDES}
+						{getCurrentPosition(currentSlide)}/{getTotalSlides()}
 					</span>
 
 					<button

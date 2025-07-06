@@ -73,7 +73,7 @@ export const Slide1 = () => {
 						className={buttonClass}
 					>
 						<span className="text-gray-600 font-semibold mr-2">4.</span>
-						<span>AI Giúp Ích Ở Đâu</span>
+						<span>AI: Trợ Thủ Đắc Lực Trong Quy Trình Phát Triển</span>
 					</Link>
 					<Link
 						to="/slide/$slideId"

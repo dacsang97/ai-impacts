@@ -42,13 +42,10 @@ export const DoughnutChart = ({
 			datalabels: {
 				color: "#fff",
 				font: {
-					weight: "bold",
+					weight: "bold" as const,
 					size: 14,
 				},
-				formatter: (
-					value: number,
-					context: { dataset: { data: number[] } },
-				) => {
+				formatter: (value: any, context: any) => {
 					const total = context.dataset.data.reduce(
 						(a: number, b: number) => a + b,
 						0,

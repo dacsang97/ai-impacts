@@ -15,6 +15,9 @@ import { Slide13 } from "./Slide13";
 import { Slide14 } from "./Slide14";
 import { Slide15 } from "./Slide15";
 import { Slide16 } from "./Slide16";
+import { Slide51 } from "./Slide51";
+import { Slide52 } from "./Slide52";
+import { Slide53 } from "./Slide53";
 
 interface SlideContentProps {
 	slideNumber: number;
@@ -57,6 +60,12 @@ export const SlideContent = ({ slideNumber }: SlideContentProps) => {
 			return <Slide15 />;
 		case 16:
 			return <Slide16 />;
+		case 51:
+			return <Slide51 />;
+		case 52:
+			return <Slide52 />;
+		case 53:
+			return <Slide53 />;
 		default:
 			return (
 				<div className="min-h-screen flex items-center justify-center bg-gray-50">
