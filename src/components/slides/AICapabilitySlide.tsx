@@ -54,34 +54,13 @@ interface AICapabilitySlideProps {
 	colorScheme?: "green" | "blue" | "purple" | "orange";
 }
 
-// Component cho progress bar - default style
-const CapabilityBar = ({
-	name,
-	percentage,
-	icon: IconComponent,
-	description,
-}: CapabilityItem) => (
-	<div className="flex items-center justify-between bg-gray-100 p-3 rounded">
-		<div className="flex items-center">
-			{IconComponent && (
-				<IconComponent size={20} className="mr-2 text-gray-600" />
-			)}
-			<div>
-				<span className="font-medium">{name}</span>
-				{description && (
-					<p className="text-xs text-gray-600 mt-1">{description}</p>
-				)}
-			</div>
-		</div>
-		<div className="flex items-center">
-			<div className="w-32 bg-gray-200 rounded-full h-2.5 mr-2">
-				<div
-					className="bg-green-500 h-2.5 rounded-full transition-all duration-300"
-					style={{ width: `${percentage}%` }}
-				/>
-			</div>
-			<span className="text-sm font-semibold">{percentage}%</span>
-		</div>
+// Component cho progress bar - brutalist style
+const ProgressBar = ({ progress }: { progress: number }) => (
+	<div className="w-full bg-gray-200 border-2 border-black h-6">
+		<div
+			className="bg-[#D7F344] h-full border-r-2 border-black"
+			style={{ width: `${progress}%` }}
+		/>
 	</div>
 );
 
@@ -313,7 +292,10 @@ export const AICapabilitySlide = ({
 				));
 			default:
 				return capabilities.map((capability, index) => (
-					<CapabilityBar key={`${capability.name}-${index}`} {...capability} />
+					<ProgressBar
+						key={`${capability.name}-${index}`}
+						progress={capability.percentage}
+					/>
 				));
 		}
 	};
@@ -386,3 +368,5 @@ export const AICapabilitySlide = ({
 		</SlideLayout>
 	);
 };
+
+export default AICapabilitySlide;

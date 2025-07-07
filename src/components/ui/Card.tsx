@@ -1,31 +1,25 @@
-import type { ReactNode } from "react";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
+import React from "react";
 
-interface CardProps {
-	children: ReactNode;
-	className?: string;
-	hover?: boolean;
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 	border?: boolean;
 	borderColor?: string;
 }
 
-export const Card = ({
-	children,
-	className = "",
-	hover = true,
-	border = false,
-	borderColor = "border-orange-500",
-}: CardProps) => {
-	return (
-		<div
-			className={cn(
-				"bg-white rounded-xl shadow-md transition-all duration-300 p-6",
-				hover && "hover:transform hover:-translate-y-1 hover:shadow-lg",
-				border && `border-2 ${borderColor}`,
-				className,
-			)}
-		>
-			{children}
-		</div>
-	);
-};
+export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+	({ className, children, border = false, borderColor, ...props }, ref) => {
+		return (
+			<div
+				ref={ref}
+				className={cn(
+					"bg-white p-6 border-2 border-black rounded-none shadow-[4px_4px_0px_#000000]",
+					className,
+				)}
+				{...props}
+			>
+				{children}
+			</div>
+		);
+	},
+);
+Card.displayName = "Card";

@@ -5,6 +5,11 @@ import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
 export const Slide8 = () => {
+	const timeSavingData = chartData.timeSaving.data.map((saved) => ({
+		saved,
+		remaining: 100 - saved,
+	}));
+
 	return (
 		<SlideLayout
 			title="Thực Tế Là Bao Nhiêu?"
@@ -23,7 +28,7 @@ export const Slide8 = () => {
 					</p>
 					<StackedBarChart
 						labels={chartData.timeSaving.labels}
-						data={chartData.timeSaving.data}
+						data={timeSavingData}
 						label="% Thời gian tiết kiệm"
 						suffix="%"
 					/>

@@ -2,13 +2,11 @@ import {
 	BarElement,
 	CategoryScale,
 	Chart as ChartJS,
-	type ChartOptions,
 	Legend,
 	LinearScale,
 	Title,
 	Tooltip,
 } from "chart.js";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 import type { ReactNode } from "react";
 import { Bar } from "react-chartjs-2";
 import { chartColors } from "../../data/chartData";
@@ -20,7 +18,6 @@ ChartJS.register(
 	Title,
 	Tooltip,
 	Legend,
-	ChartDataLabels,
 );
 
 interface BarChartProps {
@@ -32,6 +29,7 @@ interface BarChartProps {
 	highlightColor?: string;
 	highlightIndex?: number;
 	suffix?: string;
+	highlightLabel?: string;
 }
 
 export const BarChart = ({
@@ -43,95 +41,95 @@ export const BarChart = ({
 	highlightColor = chartColors.highlight,
 	highlightIndex = -1,
 	suffix = "",
+	highlightLabel,
 }: BarChartProps) => {
 	const backgroundColors = data.map((_, index) =>
 		index === highlightIndex ? highlightColor : color,
 	);
 
+	const options = {
+		responsive: true,
+		maintainAspectRatio: false,
+		scales: {
+			x: {
+				ticks: {
+					font: {
+						family: "IBM Plex Mono",
+					},
+				},
+				grid: {
+					display: false,
+				},
+				border: {
+					color: "#000000",
+					width: 2,
+				},
+			},
+			y: {
+				ticks: {
+					font: {
+						family: "IBM Plex Mono",
+					},
+				},
+				grid: {
+					display: false,
+				},
+				border: {
+					color: "#000000",
+					width: 2,
+				},
+			},
+		},
+		plugins: {
+			legend: {
+				position: "top" as const,
+				labels: {
+					font: {
+						family: "IBM Plex Mono",
+					},
+				},
+			},
+			tooltip: {
+				titleFont: { family: "IBM Plex Mono" },
+				bodyFont: { family: "IBM Plex Mono" },
+				backgroundColor: "#ffffff",
+				titleColor: "#000000",
+				bodyColor: "#000000",
+				borderColor: "#000000",
+				borderWidth: 2,
+				padding: 10,
+				caretSize: 0,
+				displayColors: false,
+			},
+		},
+	};
+
 	const chartData = {
-		labels: labels.map((l) => (typeof l === "string" ? l : "")), // Chart.js needs string labels
+		labels: labels.map(() => ""),
 		datasets: [
 			{
-				label,
-				data,
+				label: "Thời gian (tháng)",
+				data: data,
 				backgroundColor: backgroundColors,
-				borderRadius: 4,
-				maxBarThickness: 50,
+				borderColor: "#000000",
+				borderWidth: 2,
+				borderRadius: 0,
 			},
 		],
 	};
 
-	const options: ChartOptions<"bar"> = {
-		responsive: true,
-		maintainAspectRatio: false,
-		indexAxis: horizontal ? ("y" as const) : ("x" as const),
-		plugins: {
-			legend: {
-				position: "top" as const,
-				align: "end",
-				labels: {
-					color: chartColors.text,
-					font: {
-						family: "'Be Vietnam Pro', sans-serif",
-					},
-				},
-			},
-			datalabels: {
-				display: true,
-				color: chartColors.text,
-				anchor: "center",
-				align: "center",
-				font: {
-					weight: "bold",
-				},
-				formatter: (value) => {
-					return value + (suffix || "");
-				},
-			},
-		},
-		scales: {
-			x: {
-				grid: {
-					display: false,
-				},
-				ticks: {
-					display: false,
-				},
-			},
-			y: {
-				beginAtZero: true,
-				grid: {
-					display: !horizontal,
-					color: chartColors.grid,
-				},
-				ticks: {
-					display: false,
-				},
-				border: {
-					display: false,
-				},
-			},
-		},
-	};
-
 	return (
-		<div className="w-full max-w-2xl mx-auto">
-			<div className="relative h-80">
-				<Bar data={chartData} options={options} />
+		<div className="p-4 border-2 border-black bg-white shadow-[4px_4px_0px_#000000]">
+			<div className="h-[250px]">
+				<Bar options={options} data={chartData} />
 			</div>
-			{!horizontal && (
-				<div className="flex justify-around mt-4 pt-2">
-					{labels.map((label, index) => {
-						const key =
-							typeof label === "string" ? label : `icon-${data[index]}`;
-						return (
-							<div key={key} className="w-1/5 text-center text-gray-600">
-								{label}
-							</div>
-						);
-					})}
-				</div>
-			)}
+			<div className="flex justify-around mt-4">
+				{labels.map((label, index) => (
+					<div key={`${index}-${data[index]}`} className="w-full text-center">
+						{label}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
