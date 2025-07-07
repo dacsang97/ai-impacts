@@ -1,10 +1,25 @@
 import { Rocket } from "@carbon/icons-react";
 import { chartColors, chartData } from "../../data/chartData";
 import { BarChart } from "../charts/BarChart";
+import {
+	ChatGptIcon,
+	InstagramIcon,
+	SpotifyIcon,
+	TelegramIcon,
+	TiktokIcon,
+} from "../icons";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
 export const Slide2 = () => {
+	const iconComponents = [
+		<ChatGptIcon key="chatgpt" className="w-10 h-10 mx-auto" />,
+		<TiktokIcon key="tiktok" className="w-10 h-10 mx-auto" />,
+		<InstagramIcon key="instagram" className="w-10 h-10 mx-auto" />,
+		<SpotifyIcon key="spotify" className="w-10 h-10 mx-auto" />,
+		<TelegramIcon key="telegram" className="w-10 h-10 mx-auto" />,
+	];
+
 	return (
 		<SlideLayout
 			title="Từ Hype đến Hiệu quả"
@@ -33,21 +48,21 @@ export const Slide2 = () => {
 
 				<Card>
 					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						Sự tăng trưởng của ChatGPT
+						Thời gian để đạt 100 triệu người dùng
 					</h3>
 					<p className="text-gray-600 mb-6 flex items-center">
 						<span>
-							ChatGPT đạt 100 triệu người dùng trong 2 tháng, nhanh hơn bất kỳ
-							ứng dụng nào trong lịch sử, cho thấy tốc độ chấp nhận AI đáng kinh
-							ngạc.
+							ChatGPT đạt 100 triệu người dùng trong 2 tháng, cho thấy tốc độ
+							chấp nhận AI đáng kinh ngạc.
 						</span>
 						<Rocket size={24} className="ml-2 text-orange-500" />
 					</p>
 					<BarChart
-						labels={chartData.chatGPTGrowth.labels}
-						data={chartData.chatGPTGrowth.data}
-						label="Người dùng (triệu)"
-						color={chartColors.primary}
+						labels={iconComponents}
+						data={chartData.userGrowthComparison.data}
+						label="Số tháng"
+						highlightIndex={0}
+						horizontal={false}
 					/>
 				</Card>
 			</div>

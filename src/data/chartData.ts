@@ -23,13 +23,19 @@ export const chartData = {
 		],
 		data: [50, 50, 40, 30],
 	},
+	// New data for user growth comparison
+	userGrowthComparison: {
+		labels: ["ChatGPT", "TikTok", "Instagram", "Spotify", "Telegram"],
+		data: [2, 9, 30, 55, 61], // Time in months to reach 100M users
+	},
 };
 
 export const chartColors = {
-	primary: "#F57C00",
-	secondary: "#4DB6AC",
-	text: "#2C3E50",
-	grid: "#E0E0E0",
+	primary: "#4FD1C5", // teal-400
+	secondary: "#F6AD55", // orange-300
+	highlight: "#F687B3", // pink-400
+	text: "#4A5568", // gray-600
+	grid: "#E2E8F0", // gray-300
 	backgrounds: [
 		"#4DB6AC",
 		"#FFB74D",
