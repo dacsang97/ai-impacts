@@ -52,42 +52,47 @@ export const Slide14 = () => {
 				<div className="grid md:grid-cols-3 gap-6 mb-8">
 					<Card>
 						<h4 className="font-bold mb-2 flex items-center">
-							<Book size={20} className="mr-2 text-gray-700" /> Học gì?
-						</h4>
-						<p className="text-sm text-gray-600 mb-2">Focus vào meta-skills:</p>
-						<ul className="text-xs text-gray-600 space-y-1">
-							<li>- Tư duy phê phán</li>
-							<li>- Problem decomposition</li>
-							<li>- Systems thinking</li>
-							<li>- User empathy</li>
-						</ul>
-					</Card>
-
-					<Card>
-						<h4 className="font-bold mb-2 flex items-center">
-							<Collaborate size={20} className="mr-2 text-gray-700" /> Làm gì?
+							<Book size={20} className="mr-2 text-gray-700" /> Học Gì?
 						</h4>
 						<p className="text-sm text-gray-600 mb-2">
-							Thực hành thường xuyên:
+							Tập trung vào các kỹ năng "mềm" và tư duy hệ thống:
 						</p>
-						<ul className="text-xs text-gray-600 space-y-1">
-							<li>- Code review cho team</li>
-							<li>- Participate in product discussions</li>
-							<li>- Mentor junior developers</li>
-							<li>- Cross-team collaboration</li>
+						<ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+							<li>Tư duy phản biện</li>
+							<li>Chia nhỏ vấn đề</li>
+							<li>Tư duy hệ thống</li>
+							<li>Đồng cảm với người dùng</li>
 						</ul>
 					</Card>
 
 					<Card>
 						<h4 className="font-bold mb-2 flex items-center">
-							<Search size={20} className="mr-2 text-gray-700" /> Đo lường sao?
+							<Collaborate size={20} className="mr-2 text-gray-700" /> Làm Gì?
 						</h4>
-						<p className="text-sm text-gray-600 mb-2">Indicators of growth:</p>
-						<ul className="text-xs text-gray-600 space-y-1">
-							<li>- Được hỏi ý kiến về tech decisions</li>
-							<li>- Stakeholders seek your input</li>
-							<li>- Team members come for guidance</li>
-							<li>- You influence product direction</li>
+						<p className="text-sm text-gray-600 mb-2">
+							Chủ động tham gia và đóng góp:
+						</p>
+						<ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+							<li>Review code cho đồng đội</li>
+							<li>Tham gia thảo luận sản phẩm</li>
+							<li>Hướng dẫn lập trình viên mới</li>
+							<li>Hợp tác với các team khác</li>
+						</ul>
+					</Card>
+
+					<Card>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Search size={20} className="mr-2 text-gray-700" /> Đo Lường Thế
+							Nào?
+						</h4>
+						<p className="text-sm text-gray-600 mb-2">
+							Dấu hiệu cho thấy bạn đang tiến bộ:
+						</p>
+						<ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+							<li>Được hỏi ý kiến về quyết định kỹ thuật</li>
+							<li>Các bên liên quan tin tưởng</li>
+							<li>Đồng đội tìm đến nhờ hướng dẫn</li>
+							<li>Có ảnh hưởng đến định hướng sản phẩm</li>
 						</ul>
 					</Card>
 				</div>
@@ -97,11 +102,11 @@ export const Slide14 = () => {
 						<Idea size={24} className="mr-2 text-yellow-300" /> Golden Rule
 					</h3>
 					<p className="text-lg opacity-90 text-center">
-						"Trở thành người mà AI không thể thay thế: <br />
+						Trở thành người mà AI không thể thay thế
+						<br />
 						<span className="text-orange-400">
 							Hiểu vấn đề • Giao tiếp tốt • Quyết định đúng
 						</span>
-						"
 					</p>
 				</Card>
 			</div>
