@@ -1,6 +1,6 @@
 import { Flash } from "@carbon/icons-react";
 import { chartColors, chartData } from "../../data/chartData";
-import { BarChart } from "../charts/BarChart";
+import { StackedBarChart } from "../charts/StackedBarChart";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -21,12 +21,10 @@ export const Slide8 = () => {
 						Mức độ tiết kiệm thời gian ước tính ở các giai đoạn khác nhau của
 						quy trình kỹ thuật.
 					</p>
-					<BarChart
+					<StackedBarChart
 						labels={chartData.timeSaving.labels}
 						data={chartData.timeSaving.data}
 						label="% Thời gian tiết kiệm"
-						horizontal={true}
-						color={chartColors.secondary}
 						suffix="%"
 					/>
 				</Card>
