@@ -1,3 +1,13 @@
+import {
+	Analytics,
+	AssemblyCluster,
+	Book,
+	ChartRelationship,
+	Link,
+	Search,
+	SecurityServices,
+	Tools,
+} from "@carbon/icons-react";
 import { AICapabilitySlide } from "./AICapabilitySlide";
 
 export const Slide51 = () => {
@@ -5,36 +15,36 @@ export const Slide51 = () => {
 		{
 			name: "Giải thích logic code",
 			percentage: 88,
-			icon: "🧠",
+			icon: ChartRelationship,
 			description: "phân tích chi tiết",
 		},
 		{
 			name: "Truy vết luồng dữ liệu",
 			percentage: 92,
-			icon: "🔍",
+			icon: Search,
 			description: "theo dõi hiệu quả",
 		},
 		{
 			name: "Tìm kiếm tham chiếu",
 			percentage: 95,
-			icon: "🔗",
+			icon: Link,
 			description: "tìm kiếm toàn diện",
 		},
 	];
 
 	const impacts = [
 		{
-			icon: "📚",
+			icon: Book,
 			title: "Onboarding nhanh hơn",
 			description: "Hiểu codebase mới trong vài giờ thay vì vài ngày",
 		},
 		{
-			icon: "🔧",
+			icon: Tools,
 			title: "Debug hiệu quả",
 			description: "Tìm nguyên nhân lỗi và tác động của thay đổi",
 		},
 		{
-			icon: "🎯",
+			icon: SecurityServices,
 			title: "Refactor an toàn",
 			description: "Hiểu dependencies trước khi thay đổi",
 		},
@@ -55,11 +65,14 @@ export const Slide51 = () => {
 			slideNumber="5.1"
 			slideTitle="AI Giúp Ích: Đọc Hiểu Code"
 			backgroundColor="bg-blue-50"
-			capabilityTitle="📖 Khả năng phân tích code của AI"
+			capabilityTitle="Khả năng phân tích code của AI"
+			capabilityTitleIcon={Analytics}
 			capabilities={capabilities}
-			impactTitle="💡 Lợi ích thực tế"
+			impactTitle="Lợi ích thực tế"
+			impactTitleIcon={Book}
 			impacts={impacts}
-			tipTitle="🎯 Use Cases Tốt Nhất"
+			tipTitle="Use Cases Tốt Nhất"
+			tipTitleIcon={AssemblyCluster}
 			tips={tips}
 			capabilityStyle="detailed"
 			colorScheme="blue"

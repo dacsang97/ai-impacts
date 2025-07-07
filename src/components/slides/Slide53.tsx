@@ -1,72 +1,79 @@
+import {
+	CheckmarkOutline,
+	ChevronUp,
+	DataConnected,
+	Flash,
+	Idea,
+	RepeatOne,
+	ResultOld,
+	TestTool,
+	TextSelection,
+} from "@carbon/icons-react";
 import { AICapabilitySlide } from "./AICapabilitySlide";
 
 export const Slide53 = () => {
 	const capabilities = [
 		{
-			name: "Unit Tests",
-			percentage: 95,
-			icon: "⚡",
-			description: "Tạo test cases cho functions",
+			name: "Viết unit tests tự động",
+			percentage: 90,
+			icon: CheckmarkOutline,
+			description: "Test cases coverage",
 		},
 		{
-			name: "Integration Tests",
+			name: "Generate test data mẫu",
 			percentage: 85,
-			icon: "🔗",
-			description: "Test API endpoints & workflows",
+			icon: TextSelection,
+			description: "Mock data scenarios",
 		},
 		{
-			name: "E2E Tests",
+			name: "Integration test scenarios",
 			percentage: 75,
-			icon: "👤",
-			description: "Mô phỏng user interactions",
-		},
-		{
-			name: "Bug Detection",
-			percentage: 80,
-			icon: "🔍",
-			description: "Phát hiện edge cases & errors",
+			icon: DataConnected,
+			description: "End-to-end workflows",
 		},
 	];
 
-	const workflowItems = [
+	const impacts = [
 		{
-			icon: "📝",
-			title: "Test Planning",
-			description: "AI analyze requirements → generate test scenarios",
+			icon: ResultOld,
+			title: "Tăng test coverage",
+			description: "Đạt >80% coverage nhanh chóng",
 		},
 		{
-			icon: "🤖",
-			title: "Auto Generation",
-			description: "Generate test data, mocks, và assertions",
+			icon: ChevronUp,
+			title: "Tăng chất lượng code",
+			description: "Tìm bugs sớm trong dev cycle",
 		},
 		{
-			icon: "🔧",
-			title: "Maintenance",
-			description: "Update tests khi code changes",
+			icon: RepeatOne,
+			title: "CI/CD ổn định",
+			description: "Ít broken builds hơn",
 		},
 	];
 
 	const tips = [
-		{ text: "AI tốt cho happy path, cần human cho edge cases" },
-		{ text: "Review test logic, đừng blind trust AI output" },
-		{ text: "Combine AI với manual exploratory testing" },
-		{ text: "Maintain test data quality cho AI training" },
-		{ text: "AI test cần được test - avoid false confidence" },
+		{ text: "Sử dụng AI để write test cho legacy code" },
+		{ text: "Generate edge cases mà developer có thể miss" },
+		{ text: "Tạo performance test scenarios" },
+		{ text: "Auto-generate mock data cho các scenarios khác nhau" },
+		{ text: "Review AI tests để ensure quality và coverage" },
 	];
 
 	return (
 		<AICapabilitySlide
-			title="AI: Chuyên Gia Test & Tự Động Hóa"
-			subtitle="AI xuất sắc trong việc tạo test cases, mô phỏng user scenarios và detect bugs, tiết kiệm 50% thời gian viết test tự động."
+			title="AI: Trợ Thủ Testing Toàn Diện"
+			subtitle="AI excels trong việc generate test cases, tạo mock data và coverage analysis, giúp đạt >80% test coverage nhanh chóng."
 			slideNumber="5.3"
-			slideTitle="AI Giúp Ích: Test & Tự Động Hóa"
+			slideTitle="AI Giúp Ích: Testing & QA"
 			backgroundColor="bg-orange-50"
-			capabilityTitle="🧪 Testing Capabilities của AI"
+			capabilityTitle="Testing Capabilities của AI"
+			capabilityTitleIcon={TestTool}
 			capabilities={capabilities}
-			impactTitle="🚀 Testing Strategy với AI"
-			impacts={[]} // Empty để sử dụng workflowItems
-			workflowItems={workflowItems}
-			tipTitle="⚠️ Lưu Ý Quan Trọng"
+			impactTitle="Kết Quả Đạt Được"
+			impactTitleIcon={Flash}
+			impacts={impacts}
+			tipTitle="Practical Applications"
+			tipTitleIcon={Idea}
 			tips={tips}
 			capabilityStyle="detailed"
 			colorScheme="orange"

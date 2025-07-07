@@ -1,3 +1,4 @@
+import type { ComponentType } from "react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -5,13 +6,13 @@ import { SlideLayout } from "../ui/SlideLayout";
 interface CapabilityItem {
 	name: string;
 	percentage: number;
-	icon?: string;
+	icon?: ComponentType<{ size?: number; className?: string }>;
 	description?: string;
 }
 
 // Interface cho impact item
 interface ImpactItem {
-	icon: string;
+	icon: ComponentType<{ size?: number; className?: string }>;
 	title: string;
 	description: string;
 }
@@ -23,7 +24,7 @@ interface TipItem {
 
 // Interface cho workflow item (cho slide 52)
 interface WorkflowItem {
-	icon: string;
+	icon: ComponentType<{ size?: number; className?: string }>;
 	title: string;
 	description: string;
 }
@@ -36,10 +37,13 @@ interface AICapabilitySlideProps {
 	slideTitle: string;
 	backgroundColor?: string;
 	capabilityTitle: string;
+	capabilityTitleIcon?: ComponentType<{ size?: number; className?: string }>;
 	capabilities: CapabilityItem[];
 	impactTitle: string;
+	impactTitleIcon?: ComponentType<{ size?: number; className?: string }>;
 	impacts: ImpactItem[];
 	tipTitle: string;
+	tipTitleIcon?: ComponentType<{ size?: number; className?: string }>;
 	tips: TipItem[];
 	quote?: string;
 	// Thêm props cho workflow (slide 52)
@@ -54,12 +58,14 @@ interface AICapabilitySlideProps {
 const CapabilityBar = ({
 	name,
 	percentage,
-	icon,
+	icon: IconComponent,
 	description,
 }: CapabilityItem) => (
 	<div className="flex items-center justify-between bg-gray-100 p-3 rounded">
 		<div className="flex items-center">
-			{icon && <span className="text-xl mr-2">{icon}</span>}
+			{IconComponent && (
+				<IconComponent size={20} className="mr-2 text-gray-600" />
+			)}
 			<div>
 				<span className="font-medium">{name}</span>
 				{description && (
@@ -83,7 +89,7 @@ const CapabilityBar = ({
 const DetailedCapabilityBar = ({
 	name,
 	percentage,
-	icon,
+	icon: IconComponent,
 	description,
 	colorScheme = "green",
 }: CapabilityItem & { colorScheme?: string }) => {
@@ -102,7 +108,7 @@ const DetailedCapabilityBar = ({
 		<div className={`${bgColor} p-4 rounded-lg`}>
 			<div className="flex items-center justify-between mb-2">
 				<span className="font-medium">{name}</span>
-				{icon && <span className="text-2xl">{icon}</span>}
+				{IconComponent && <IconComponent size={24} className="text-gray-700" />}
 			</div>
 			<div className="w-full bg-gray-200 rounded-full h-2 mb-2">
 				<div
@@ -122,7 +128,7 @@ const DetailedCapabilityBar = ({
 const BoxedCapabilityBar = ({
 	name,
 	percentage,
-	icon,
+	icon: IconComponent,
 	description,
 	colorScheme = "green",
 }: CapabilityItem & { colorScheme?: string }) => {
@@ -146,7 +152,7 @@ const BoxedCapabilityBar = ({
 						<p className="text-sm text-gray-600">{description}</p>
 					)}
 				</div>
-				{icon && <span className="text-2xl">{icon}</span>}
+				{IconComponent && <IconComponent size={24} className="text-gray-700" />}
 			</div>
 			<div className="w-full bg-gray-200 rounded-full h-2">
 				<div
@@ -162,7 +168,7 @@ const BoxedCapabilityBar = ({
 const CompactCapabilityBar = ({
 	name,
 	percentage,
-	icon,
+	icon: IconComponent,
 	description,
 	colorScheme = "green",
 }: CapabilityItem & { colorScheme?: string }) => {
@@ -181,7 +187,9 @@ const CompactCapabilityBar = ({
 		<div className={`${bgColor} p-4 rounded-lg`}>
 			<div className="flex items-center justify-between mb-2">
 				<div className="flex items-center">
-					{icon && <span className="text-2xl mr-3">{icon}</span>}
+					{IconComponent && (
+						<IconComponent size={24} className="mr-3 text-gray-700" />
+					)}
 					<div>
 						<h4 className="font-semibold">{name}</h4>
 						{description && (
@@ -204,9 +212,13 @@ const CompactCapabilityBar = ({
 };
 
 // Component cho impact item
-const ImpactItem = ({ icon, title, description }: ImpactItem) => (
+const ImpactItem = ({
+	icon: IconComponent,
+	title,
+	description,
+}: ImpactItem) => (
 	<div className="flex items-center">
-		<span className="text-3xl mr-3">{icon}</span>
+		<IconComponent size={32} className="mr-3 text-white" />
 		<div>
 			<p className="font-semibold">{title}</p>
 			<p className="text-sm opacity-90">{description}</p>
@@ -215,10 +227,14 @@ const ImpactItem = ({ icon, title, description }: ImpactItem) => (
 );
 
 // Component cho workflow item (slide 52)
-const WorkflowItem = ({ icon, title, description }: WorkflowItem) => (
+const WorkflowItem = ({
+	icon: IconComponent,
+	title,
+	description,
+}: WorkflowItem) => (
 	<div className="bg-gray-700 p-3 rounded">
 		<div className="flex items-start">
-			<span className="text-2xl mr-3">{icon}</span>
+			<IconComponent size={24} className="mr-3 text-white" />
 			<div>
 				<p className="font-semibold text-sm">{title}</p>
 				<p className="text-xs opacity-90">{description}</p>
@@ -235,10 +251,13 @@ export const AICapabilitySlide = ({
 	slideTitle,
 	backgroundColor = "bg-green-50",
 	capabilityTitle,
+	capabilityTitleIcon: CapabilityTitleIcon,
 	capabilities,
 	impactTitle,
+	impactTitleIcon: ImpactTitleIcon,
 	impacts,
 	tipTitle,
+	tipTitleIcon: TipTitleIcon,
 	tips,
 	quote,
 	workflowItems,
@@ -308,7 +327,10 @@ export const AICapabilitySlide = ({
 			<div className="grid md:grid-cols-2 gap-8 items-center mt-16">
 				{/* Capabilities Card */}
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						{CapabilityTitleIcon && (
+							<CapabilityTitleIcon size={24} className="mr-2" />
+						)}
 						{capabilityTitle}
 					</h3>
 					<div className="space-y-4">{renderCapabilityBars()}</div>
@@ -317,7 +339,12 @@ export const AICapabilitySlide = ({
 				<div className="space-y-6">
 					{/* Impact Card */}
 					<Card className="bg-gray-800 text-white">
-						<h3 className="text-xl font-bold mb-4">{impactTitle}</h3>
+						<h3 className="text-xl font-bold mb-4 flex items-center">
+							{ImpactTitleIcon && (
+								<ImpactTitleIcon size={24} className="mr-2 text-white" />
+							)}
+							{impactTitle}
+						</h3>
 						<div className="space-y-3">
 							{workflowItems
 								? // Render workflow items for slide 52
@@ -334,8 +361,9 @@ export const AICapabilitySlide = ({
 					{/* Tips Card */}
 					<Card border={true} borderColor={borderColorMap[colorScheme]}>
 						<h3
-							className={`text-lg font-bold ${tipColorMap[colorScheme]} mb-3`}
+							className={`text-lg font-bold ${tipColorMap[colorScheme]} mb-3 flex items-center`}
 						>
+							{TipTitleIcon && <TipTitleIcon size={20} className="mr-2" />}
 							{tipTitle}
 						</h3>
 						<ul className="space-y-2 text-sm text-gray-700">

@@ -13,6 +13,8 @@
     "check": "biome check"
   },
   "dependencies": {
+    "@carbon/icons-react": "^11.62.0",
+    "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-router": "^1.121.2",
     "@tanstack/react-router-devtools": "^1.121.2",

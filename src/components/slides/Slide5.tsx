@@ -1,3 +1,13 @@
+import {
+	CheckmarkFilled,
+	CloudApp,
+	Code,
+	Edit,
+	Flash,
+	Idea,
+	Renew,
+	Settings,
+} from "@carbon/icons-react";
 import { AICapabilitySlide } from "./AICapabilitySlide";
 
 export const Slide5 = () => {
@@ -5,42 +15,42 @@ export const Slide5 = () => {
 		{
 			name: "Tạo hàm, lớp cơ bản",
 			percentage: 95,
-			icon: "⚡",
+			icon: Code,
 			description: "Functions, classes, boilerplate",
 		},
 		{
 			name: "Chuyển đổi cú pháp",
 			percentage: 90,
-			icon: "🔄",
+			icon: Renew,
 			description: "Language conversion, refactoring",
 		},
 		{
 			name: "Gợi ý code theo ngữ cảnh",
 			percentage: 80,
-			icon: "🧠",
+			icon: Idea,
 			description: "Context-aware suggestions",
 		},
 		{
 			name: "Tạo API endpoints",
 			percentage: 85,
-			icon: "🌐",
+			icon: CloudApp,
 			description: "REST APIs, GraphQL",
 		},
 	];
 
 	const impacts = [
 		{
-			icon: "⚡",
+			icon: Flash,
 			title: "Tăng tốc 50%",
 			description: "trong việc viết code mới",
 		},
 		{
-			icon: "🎯",
+			icon: CheckmarkFilled,
 			title: "Giảm lỗi syntax",
 			description: "AI hiếm khi mắc lỗi cú pháp",
 		},
 		{
-			icon: "🔄",
+			icon: Settings,
 			title: "Refactor nhanh",
 			description: "Chuyển đổi code structure dễ dàng",
 		},
@@ -60,11 +70,14 @@ export const Slide5 = () => {
 			slideNumber="5"
 			slideTitle="AI Giúp Ích: Viết Code"
 			backgroundColor="bg-green-50"
-			capabilityTitle="✍️ Khả năng của AI trong việc viết code"
+			capabilityTitle="Khả năng của AI trong việc viết code"
+			capabilityTitleIcon={Edit}
 			capabilities={capabilities}
-			impactTitle="🚀 Tác động thực tế"
+			impactTitle="Tác động thực tế"
+			impactTitleIcon={Flash}
 			impacts={impacts}
-			tipTitle="💡 Lời khuyên"
+			tipTitle="Lời khuyên"
+			tipTitleIcon={Idea}
 			tips={tips}
 			capabilityStyle="detailed"
 			colorScheme="green"
