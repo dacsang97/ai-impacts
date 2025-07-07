@@ -35,13 +35,9 @@ interface BarChartProps {
 export const BarChart = ({
 	labels,
 	data,
-	label = "Data",
-	horizontal = false,
 	color = chartColors.primary,
 	highlightColor = chartColors.highlight,
 	highlightIndex = -1,
-	suffix = "",
-	highlightLabel,
 }: BarChartProps) => {
 	const backgroundColors = data.map((_, index) =>
 		index === highlightIndex ? highlightColor : color,

@@ -2,7 +2,7 @@ import { SlideLayout } from "../ui/SlideLayout";
 
 export const Slide15 = () => {
 	return (
-		<SlideLayout className="bg-gray-50">
+		<SlideLayout className="bg-gray-50" title="">
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
 				15. Kết Luận
 			</div>

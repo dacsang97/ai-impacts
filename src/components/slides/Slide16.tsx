@@ -3,7 +3,7 @@ import { SlideLayout } from "../ui/SlideLayout";
 
 export const Slide16 = () => {
 	return (
-		<SlideLayout className="bg-yellow-50">
+		<SlideLayout className="bg-yellow-50" title="">
 			<div className="absolute top-8 left-8 text-lg font-semibold text-gray-700">
 				16. Cảm Ơn!
 			</div>
