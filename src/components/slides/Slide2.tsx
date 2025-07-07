@@ -55,7 +55,7 @@ export const Slide2 = () => {
 							ChatGPT đạt 100 triệu người dùng trong 2 tháng, cho thấy tốc độ
 							chấp nhận AI đáng kinh ngạc.
 						</span>
-						<Rocket size={24} className="ml-2 text-orange-500" />
+						<Rocket size={48} className="ml-2 text-orange-500" />
 					</p>
 					<BarChart
 						labels={iconComponents}
