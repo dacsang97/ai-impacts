@@ -2,8 +2,6 @@ import { useNavigate, useParams } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
 
-const TOTAL_SLIDES = 17; // slides 0-16
-
 const slideOrder = [
 	0, 1, 2, 3, 4, 5, 5.1, 5.2, 5.3, 6, 7, 8, 9, 10, 10.1, 10.2, 10.3, 10.4, 11,
 	12, 13, 14, 15, 16,

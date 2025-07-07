@@ -1,4 +1,3 @@
-import { ChartLineData, Idea, Renew } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 

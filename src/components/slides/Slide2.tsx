@@ -1,5 +1,5 @@
 import { Rocket } from "@carbon/icons-react";
-import { chartColors, chartData } from "../../data/chartData";
+import { chartData } from "../../data/chartData";
 import { BarChart } from "../charts/BarChart";
 import {
 	ChatGptIcon,

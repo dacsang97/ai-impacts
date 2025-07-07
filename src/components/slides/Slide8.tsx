@@ -1,5 +1,5 @@
 import { Flash } from "@carbon/icons-react";
-import { chartColors, chartData } from "../../data/chartData";
+import { chartData } from "../../data/chartData";
 import { StackedBarChart } from "../charts/StackedBarChart";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
