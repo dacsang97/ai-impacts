@@ -1,3 +1,10 @@
+import {
+	ArrowDown,
+	ArrowsHorizontal,
+	Bullhorn,
+	Chat,
+	Flash,
+} from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -23,7 +30,9 @@ export const Slide11 = () => {
 									Định nghĩa yêu cầu, giao tiếp với stakeholders
 								</p>
 							</div>
-							<div className="text-center text-gray-400 text-2xl">⬇</div>
+							<div className="text-center text-gray-400 text-2xl">
+								<ArrowDown size={32} />
+							</div>
 							<div className="bg-green-100 p-3 rounded">
 								<p className="font-semibold">Engineer</p>
 								<p className="text-sm text-gray-600">
@@ -46,7 +55,9 @@ export const Slide11 = () => {
 									Hiểu người dùng, đề xuất giải pháp, code nhanh
 								</p>
 							</div>
-							<div className="text-center text-gray-400 text-2xl">⬌</div>
+							<div className="text-center text-gray-400 text-2xl">
+								<ArrowsHorizontal size={32} />
+							</div>
 							<div className="bg-purple-100 p-3 rounded">
 								<p className="font-semibold">Tech-savvy PM</p>
 								<p className="text-sm text-gray-600">
@@ -62,7 +73,10 @@ export const Slide11 = () => {
 
 				<div className="grid md:grid-cols-3 gap-6">
 					<Card>
-						<h4 className="font-bold mb-2">💭 Hiểu vấn đề sâu hơn</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Chat size={20} className="mr-2 text-teal-500" /> Hiểu vấn đề sâu
+							hơn
+						</h4>
 						<p className="text-sm text-gray-600">
 							Engineers có thời gian để nghiên cứu user behavior và business
 							impact.
@@ -70,7 +84,10 @@ export const Slide11 = () => {
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">🎯 Giải pháp tốt hơn</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Bullhorn size={20} className="mr-2 text-teal-500" /> Giải pháp
+							tốt hơn
+						</h4>
 						<p className="text-sm text-gray-600">
 							Khi hiểu vấn đề, kỹ thuật viên có thể đề xuất giải pháp tối ưu
 							hơn.
@@ -78,7 +95,10 @@ export const Slide11 = () => {
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">⚡ Iteration nhanh hơn</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Flash size={20} className="mr-2 text-teal-500" /> Iteration nhanh
+							hơn
+						</h4>
 						<p className="text-sm text-gray-600">
 							Ít handoff, nhiều thử nghiệm, feedback loop chặt chẽ hơn.
 						</p>

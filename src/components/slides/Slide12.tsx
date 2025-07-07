@@ -1,3 +1,4 @@
+import { Flash, Light, Money, Renew } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -15,8 +16,9 @@ export const Slide12 = () => {
 			<div className="mt-16 grid md:grid-cols-2 gap-8">
 				<div className="space-y-6">
 					<Card>
-						<h3 className="text-xl font-bold text-gray-800 mb-4">
-							🔄 Thay đổi quy trình
+						<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+							<Renew size={24} className="mr-2 text-blue-500" /> Thay đổi quy
+							trình
 						</h3>
 						<ul className="space-y-2 text-gray-700">
 							<li>• Code review tập trung vào logic thay vì syntax</li>
@@ -27,8 +29,9 @@ export const Slide12 = () => {
 					</Card>
 
 					<Card>
-						<h3 className="text-xl font-bold text-gray-800 mb-4">
-							💰 Đầu tư vào công cụ
+						<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+							<Money size={24} className="mr-2 text-blue-500" /> Đầu tư vào công
+							cụ
 						</h3>
 						<ul className="space-y-2 text-gray-700">
 							<li>• License cho AI coding assistants</li>
@@ -41,8 +44,8 @@ export const Slide12 = () => {
 
 				<div className="space-y-6">
 					<Card>
-						<h3 className="text-xl font-bold text-gray-800 mb-4">
-							🧠 Mindset mới
+						<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+							<Light size={24} className="mr-2 text-blue-500" /> Mindset mới
 						</h3>
 						<ul className="space-y-2 text-gray-700">
 							<li>• Từ "hoàn hảo từ đầu" sang "iterate nhanh"</li>
@@ -53,8 +56,9 @@ export const Slide12 = () => {
 					</Card>
 
 					<Card border={true} borderColor="border-orange-500">
-						<h3 className="text-xl font-bold text-gray-800 mb-4">
-							⚡ Yếu tố then chốt
+						<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+							<Flash size={24} className="mr-2 text-orange-500" /> Yếu tố then
+							chốt
 						</h3>
 						<div className="space-y-3">
 							<p className="font-semibold text-teal-600">

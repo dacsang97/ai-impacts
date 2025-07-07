@@ -1,3 +1,4 @@
+import { ChartLineData, Idea, Renew } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -59,21 +60,28 @@ export const Slide10 = () => {
 
 				<div className="grid md:grid-cols-3 gap-6">
 					<Card>
-						<h4 className="font-bold mb-2">📈 Tăng sự tự chủ</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<ChartLineData size={20} className="mr-2 text-teal-500" /> Tăng sự
+							tự chủ
+						</h4>
 						<p className="text-sm text-gray-600">
 							Mỗi người có thể xử lý nhiều loại vấn đề hơn mà không cần chờ đợi.
 						</p>
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">🔄 Giảm phụ thuộc</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Renew size={20} className="mr-2 text-teal-500" /> Giảm phụ thuộc
+						</h4>
 						<p className="text-sm text-gray-600">
 							Ít bottleneck hơn khi một chuyên gia vắng mặt hoặc quá tải.
 						</p>
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">💡 Tăng cải tiến</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Idea size={20} className="mr-2 text-teal-500" /> Tăng cải tiến
+						</h4>
 						<p className="text-sm text-gray-600">
 							Nhiều góc nhìn khác nhau cùng đóng góp vào giải pháp.
 						</p>

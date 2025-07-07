@@ -1,3 +1,4 @@
+import { CheckmarkFilled, Misuse } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -14,41 +15,37 @@ export const Slide3 = () => {
 
 			<div className="grid md:grid-cols-2 gap-8 items-start mt-16">
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						AI có thể làm gì? ✅
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<CheckmarkFilled size={24} className="mr-2 text-teal-500" />
+						AI có thể làm gì?
 					</h3>
-					<ul className="space-y-2 text-gray-700">
+					<ul className="space-y-2 text-gray-700 pl-8">
 						<li className="flex items-start">
-							<span className="text-teal-500 mr-2">✓</span>
-							<span>Tạo mã boilerplate, cấu trúc dự án.</span>
+							<span>- Tạo mã boilerplate, cấu trúc dự án.</span>
 						</li>
 						<li className="flex items-start">
-							<span className="text-teal-500 mr-2">✓</span>
-							<span>Tạo test từ API specs, gợi ý giải pháp.</span>
+							<span>- Tạo test từ API specs, gợi ý giải pháp.</span>
 						</li>
 						<li className="flex items-start">
-							<span className="text-teal-500 mr-2">✓</span>
-							<span>Refactor code nhỏ, tóm tắt tài liệu/log.</span>
+							<span>- Refactor code nhỏ, tóm tắt tài liệu/log.</span>
 						</li>
 					</ul>
 				</Card>
 
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						AI còn hạn chế gì? ❌
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<Misuse size={24} className="mr-2 text-red-500" />
+						AI còn hạn chế gì?
 					</h3>
-					<ul className="space-y-2 text-gray-700">
+					<ul className="space-y-2 text-gray-700 pl-8">
 						<li className="flex items-start">
-							<span className="text-red-500 mr-2">✗</span>
-							<span>Đánh giá trade-off dài hạn, hiểu ngữ cảnh hệ thống.</span>
+							<span>- Đánh giá trade-off dài hạn, hiểu ngữ cảnh hệ thống.</span>
 						</li>
 						<li className="flex items-start">
-							<span className="text-red-500 mr-2">✗</span>
-							<span>Đảm bảo khả năng bảo trì/hiệu suất/sự tinh tế.</span>
+							<span>- Đảm bảo khả năng bảo trì/hiệu suất/sự tinh tế.</span>
 						</li>
 						<li className="flex items-start">
-							<span className="text-red-500 mr-2">✗</span>
-							<span>Phát hiện lỗi tinh vi cần kinh nghiệm thực tế.</span>
+							<span>- Phát hiện lỗi tinh vi cần kinh nghiệm thực tế.</span>
 						</li>
 					</ul>
 				</Card>

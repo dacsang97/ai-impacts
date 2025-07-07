@@ -1,3 +1,4 @@
+import { Flash } from "@carbon/icons-react";
 import { chartColors, chartData } from "../../data/chartData";
 import { BarChart } from "../charts/BarChart";
 import { Card } from "../ui/Card";
@@ -52,7 +53,7 @@ export const Slide8 = () => {
 							</p>
 						</div>
 						<div className="flex items-center">
-							<span className="text-5xl mr-4">⚡</span>
+							<Flash size={48} className="mr-4 text-yellow-300" />
 							<div>
 								<h4 className="font-semibold text-lg">Tăng tốc hiệu quả</h4>
 								<p className="opacity-90 mt-1">

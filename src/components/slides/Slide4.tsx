@@ -1,3 +1,4 @@
+import { CheckmarkOutline, Compass, Idea, Scales } from "@carbon/icons-react";
 import { chartData } from "../../data/chartData";
 import { DoughnutChart } from "../charts/DoughnutChart";
 import { Card } from "../ui/Card";
@@ -37,21 +38,33 @@ export const Slide4 = () => {
 						</h3>
 						<ul className="space-y-3 opacity-90">
 							<li className="flex items-start">
-								<span className="mr-3 text-xl">💡</span>
+								<Idea
+									size={24}
+									className="mr-3 text-yellow-300 flex-shrink-0 mt-1"
+								/>
 								<span>Xác định rõ ràng vấn đề.</span>
 							</li>
 							<li className="flex items-start">
-								<span className="mr-3 text-xl">⚖️</span>
+								<Scales
+									size={24}
+									className="mr-3 text-yellow-300 flex-shrink-0 mt-1"
+								/>
 								<span>Hiểu các đánh đổi (trade-offs).</span>
 							</li>
 							<li className="flex items-start">
-								<span className="mr-3 text-xl">🧭</span>
+								<Compass
+									size={24}
+									className="mr-3 text-yellow-300 flex-shrink-0 mt-1"
+								/>
 								<span>
 									Hướng dẫn AI (hoặc đồng đội) đến giải pháp hiệu quả.
 								</span>
 							</li>
 							<li className="flex items-start">
-								<span className="mr-3 text-xl">✅</span>
+								<CheckmarkOutline
+									size={24}
+									className="mr-3 text-yellow-300 flex-shrink-0 mt-1"
+								/>
 								<span>Chịu trách nhiệm về kết quả, không chỉ code.</span>
 							</li>
 						</ul>

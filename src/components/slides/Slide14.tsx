@@ -1,3 +1,11 @@
+import {
+	Book,
+	Bullhorn,
+	Collaborate,
+	Idea,
+	Rocket,
+	Search,
+} from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -15,8 +23,8 @@ export const Slide14 = () => {
 			<div className="mt-16">
 				<div className="grid md:grid-cols-2 gap-8 mb-8">
 					<Card border={true} borderColor="border-teal-500">
-						<h3 className="text-xl font-bold text-teal-800 mb-4">
-							🚀 Ngắn hạn (3-6 tháng)
+						<h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+							<Rocket size={24} className="mr-2" /> Ngắn hạn (3-6 tháng)
 						</h3>
 						<ul className="space-y-2 text-gray-700">
 							<li>• Học cách sử dụng AI coding assistants hiệu quả</li>
@@ -28,8 +36,8 @@ export const Slide14 = () => {
 					</Card>
 
 					<Card border={true} borderColor="border-orange-500">
-						<h3 className="text-xl font-bold text-orange-800 mb-4">
-							🎯 Dài hạn (1-2 năm)
+						<h3 className="text-xl font-bold text-orange-800 mb-4 flex items-center">
+							<Bullhorn size={24} className="mr-2" /> Dài hạn (1-2 năm)
 						</h3>
 						<ul className="space-y-2 text-gray-700">
 							<li>• Phát triển product sense mạnh mẽ</li>
@@ -43,7 +51,9 @@ export const Slide14 = () => {
 
 				<div className="grid md:grid-cols-3 gap-6 mb-8">
 					<Card>
-						<h4 className="font-bold mb-2">📚 Học gì?</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Book size={20} className="mr-2 text-gray-700" /> Học gì?
+						</h4>
 						<p className="text-sm text-gray-600 mb-2">Focus vào meta-skills:</p>
 						<ul className="text-xs text-gray-600 space-y-1">
 							<li>- Tư duy phê phán</li>
@@ -54,7 +64,9 @@ export const Slide14 = () => {
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">🤝 Làm gì?</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Collaborate size={20} className="mr-2 text-gray-700" /> Làm gì?
+						</h4>
 						<p className="text-sm text-gray-600 mb-2">
 							Thực hành thường xuyên:
 						</p>
@@ -67,7 +79,9 @@ export const Slide14 = () => {
 					</Card>
 
 					<Card>
-						<h4 className="font-bold mb-2">🔍 Đo lường sao?</h4>
+						<h4 className="font-bold mb-2 flex items-center">
+							<Search size={20} className="mr-2 text-gray-700" /> Đo lường sao?
+						</h4>
 						<p className="text-sm text-gray-600 mb-2">Indicators of growth:</p>
 						<ul className="text-xs text-gray-600 space-y-1">
 							<li>- Được hỏi ý kiến về tech decisions</li>
@@ -79,7 +93,9 @@ export const Slide14 = () => {
 				</div>
 
 				<Card className="bg-gray-800 text-white">
-					<h3 className="text-xl font-bold mb-4">💡 Golden Rule</h3>
+					<h3 className="text-xl font-bold mb-4 flex items-center">
+						<Idea size={24} className="mr-2 text-yellow-300" /> Golden Rule
+					</h3>
 					<p className="text-lg opacity-90 text-center">
 						"Trở thành người mà AI không thể thay thế: <br />
 						<span className="text-orange-400">

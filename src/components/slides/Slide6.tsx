@@ -1,3 +1,4 @@
+import { Idea, Rocket } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -14,8 +15,9 @@ export const Slide6 = () => {
 
 			<div className="grid md:grid-cols-2 gap-8 items-center mt-16">
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						🚀 Triển khai & Giám sát
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<Rocket size={24} className="mr-2 text-orange-500" /> Triển khai &
+						Giám sát
 					</h3>
 					<p className="text-gray-600 mb-2">
 						AI giúp phân tích log, phát hiện bất thường, và cảnh báo sự cố tiềm
@@ -29,7 +31,10 @@ export const Slide6 = () => {
 				</Card>
 
 				<Card className="bg-gray-800 text-white">
-					<h3 className="text-xl font-bold mb-4">💡 Tóm tắt: AI-First Tasks</h3>
+					<h3 className="text-xl font-bold mb-4 flex items-center">
+						<Idea size={24} className="mr-2 text-yellow-300" /> Tóm tắt:
+						AI-First Tasks
+					</h3>
 					<p className="opacity-90 mb-2">
 						AI là lựa chọn hàng đầu cho các tác vụ mang tính lặp lại, có cấu
 						trúc rõ ràng và cần tốc độ cao.

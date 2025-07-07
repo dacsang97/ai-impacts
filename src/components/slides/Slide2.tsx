@@ -1,3 +1,4 @@
+import { Rocket } from "@carbon/icons-react";
 import { chartColors, chartData } from "../../data/chartData";
 import { BarChart } from "../charts/BarChart";
 import { Card } from "../ui/Card";
@@ -34,10 +35,13 @@ export const Slide2 = () => {
 					<h3 className="text-xl font-bold text-gray-800 mb-4">
 						Sự tăng trưởng của ChatGPT
 					</h3>
-					<p className="text-gray-600 mb-6">
-						ChatGPT đạt 100 triệu người dùng trong 2 tháng, nhanh hơn bất kỳ ứng
-						dụng nào trong lịch sử, cho thấy tốc độ chấp nhận AI đáng kinh ngạc.
-						🚀
+					<p className="text-gray-600 mb-6 flex items-center">
+						<span>
+							ChatGPT đạt 100 triệu người dùng trong 2 tháng, nhanh hơn bất kỳ
+							ứng dụng nào trong lịch sử, cho thấy tốc độ chấp nhận AI đáng kinh
+							ngạc.
+						</span>
+						<Rocket size={24} className="ml-2 text-orange-500" />
 					</p>
 					<BarChart
 						labels={chartData.chatGPTGrowth.labels}

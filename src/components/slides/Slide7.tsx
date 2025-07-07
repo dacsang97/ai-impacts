@@ -1,3 +1,4 @@
+import { Building, Help, Idea, Search } from "@carbon/icons-react";
 import { Card } from "../ui/Card";
 import { SlideLayout } from "../ui/SlideLayout";
 
@@ -14,8 +15,9 @@ export const Slide7 = () => {
 
 			<div className="grid md:grid-cols-2 gap-8 mt-16">
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						🤔 Chọn giải pháp phù hợp
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<Help size={24} className="mr-2 text-blue-500" /> Chọn giải pháp phù
+						hợp
 					</h3>
 					<p className="text-gray-600 mb-2">
 						AI không thể đánh giá các đánh đổi, hiểu hệ thống hiện tại, hoặc
@@ -29,8 +31,9 @@ export const Slide7 = () => {
 				</Card>
 
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						🔍 Hiểu vấn đề sâu sắc
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<Search size={24} className="mr-2 text-blue-500" /> Hiểu vấn đề sâu
+						sắc
 					</h3>
 					<p className="text-gray-600 mb-2">
 						AI không thể đào sâu, đặt câu hỏi phản biện, hoặc tổng hợp thông tin
@@ -44,8 +47,9 @@ export const Slide7 = () => {
 				</Card>
 
 				<Card>
-					<h3 className="text-xl font-bold text-gray-800 mb-4">
-						🏗️ Thiết kế cho dài hạn
+					<h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+						<Building size={24} className="mr-2 text-blue-500" /> Thiết kế cho
+						dài hạn
 					</h3>
 					<p className="text-gray-600 mb-2">
 						Code do AI tạo ra thường thiếu khả năng bảo trì, không tuân thủ các
@@ -59,8 +63,9 @@ export const Slide7 = () => {
 				</Card>
 
 				<Card className="bg-gray-800 text-white">
-					<h3 className="text-xl font-bold mb-4">
-						💡 Tóm tắt: Human-Led Tasks
+					<h3 className="text-xl font-bold mb-4 flex items-center">
+						<Idea size={24} className="mr-2 text-yellow-300" /> Tóm tắt:
+						Human-Led Tasks
 					</h3>
 					<p className="opacity-90 mb-2">
 						Những tác vụ đòi hỏi sự phán đoán, sáng tạo, và hiểu biết sâu sắc về
