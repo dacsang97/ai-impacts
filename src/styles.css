@@ -71,3 +71,26 @@ code {
 	border-color: #10b981;
 	transform: rotate(-3deg);
 }
+
+@keyframes heartbeat {
+	0% {
+		transform: scale(1);
+	}
+	14% {
+		transform: scale(1.3);
+	}
+	28% {
+		transform: scale(1);
+	}
+	42% {
+		transform: scale(1.3);
+	}
+	70% {
+		transform: scale(1);
+	}
+}
+
+.heartbeat-animation {
+	animation: heartbeat 1.5s infinite;
+	display: inline-block; /* Ensure transform is applied correctly */
+}

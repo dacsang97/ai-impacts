@@ -14,7 +14,10 @@ export const Slide16 = () => {
 				</p>
 				<p className="text-xl font-medium text-gray-700 mb-4 flex items-center justify-center">
 					<span>0x91145 - From GHT with</span>
-					<FavoriteFilled size={24} className="mx-2 text-red-500" />
+					<FavoriteFilled
+						size={24}
+						className="mx-2 text-red-500 heartbeat-animation"
+					/>
 				</p>
 				<p className="text-lg text-gray-500">contact: evan@godhitech.com</p>
 			</div>

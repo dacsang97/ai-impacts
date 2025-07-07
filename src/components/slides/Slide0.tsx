@@ -16,7 +16,7 @@ export const Slide0 = () => {
 				</p>
 				<div className="flex items-center justify-center text-base font-medium text-black">
 					<span>0x91145 - From GHT with</span>
-					<FavoriteFilled className="inline-block w-5 h-5 ml-2 text-red-500" />
+					<FavoriteFilled className="w-5 h-5 ml-2 text-red-500 heartbeat-animation" />
 				</div>
 			</div>
 		</SlideLayout>
