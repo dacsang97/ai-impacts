@@ -1,6 +1,3 @@
-import type { ReactNode } from "react";
-import { Bar } from "react-chartjs-2";
-import "./ChartSetup";
 import {
 	BarElement,
 	CategoryScale,
@@ -11,6 +8,9 @@ import {
 	Title,
 	Tooltip,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import type { ReactNode } from "react";
+import { Bar } from "react-chartjs-2";
 import { chartColors } from "../../data/chartData";
 
 ChartJS.register(
@@ -20,6 +20,7 @@ ChartJS.register(
 	Title,
 	Tooltip,
 	Legend,
+	ChartDataLabels,
 );
 
 interface BarChartProps {
@@ -66,7 +67,8 @@ export const BarChart = ({
 		indexAxis: horizontal ? ("y" as const) : ("x" as const),
 		plugins: {
 			legend: {
-				position: "bottom" as const,
+				position: "top" as const,
+				align: "end",
 				labels: {
 					color: chartColors.text,
 					font: {
@@ -74,24 +76,26 @@ export const BarChart = ({
 					},
 				},
 			},
+			datalabels: {
+				display: true,
+				color: chartColors.text,
+				anchor: "center",
+				align: "center",
+				font: {
+					weight: "bold",
+				},
+				formatter: (value) => {
+					return value + (suffix || "");
+				},
+			},
 		},
 		scales: {
 			x: {
-				beginAtZero: true,
 				grid: {
-					display: horizontal,
-					color: chartColors.grid,
+					display: false,
 				},
 				ticks: {
-					display: !horizontal, // Hide original labels if vertical
-					color: chartColors.text,
-					callback: function (value) {
-						if (horizontal && suffix) {
-							const numericValue = this.getLabelForValue(value as number);
-							return numericValue + suffix;
-						}
-						return this.getLabelForValue(value as number);
-					},
+					display: false,
 				},
 			},
 			y: {
@@ -101,33 +105,31 @@ export const BarChart = ({
 					color: chartColors.grid,
 				},
 				ticks: {
-					display: horizontal, // Hide original labels if horizontal
-					color: chartColors.text,
-					callback: function (value) {
-						if (!horizontal && suffix) {
-							const label = this.getLabelForValue(value as number);
-							return label + suffix;
-						}
-						return this.getLabelForValue(value as number);
-					},
+					display: false,
+				},
+				border: {
+					display: false,
 				},
 			},
 		},
 	};
 
 	return (
-		<div className="relative w-full max-w-2xl mx-auto h-80">
-			<Bar data={chartData} options={options} />
+		<div className="w-full max-w-2xl mx-auto">
+			<div className="relative h-80">
+				<Bar data={chartData} options={options} />
+			</div>
 			{!horizontal && (
-				<div className="flex justify-around mt-2">
-					{labels.map((label, index) => (
-						<div
-							key={typeof label === "string" ? label : index}
-							className="w-1/5 text-center"
-						>
-							{label}
-						</div>
-					))}
+				<div className="flex justify-around mt-4 pt-2">
+					{labels.map((label, index) => {
+						const key =
+							typeof label === "string" ? label : `icon-${data[index]}`;
+						return (
+							<div key={key} className="w-1/5 text-center text-gray-600">
+								{label}
+							</div>
+						);
+					})}
 				</div>
 			)}
 		</div>
