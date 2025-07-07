@@ -4,6 +4,11 @@ import { cn } from "../../lib/utils";
 
 const TOTAL_SLIDES = 17; // slides 0-16
 
+const slideOrder = [
+	0, 1, 2, 3, 4, 5, 5.1, 5.2, 5.3, 6, 7, 8, 9, 10, 10.1, 10.2, 10.3, 10.4, 11,
+	12, 13, 14, 15, 16,
+];
+
 export const Navigation = () => {
 	const navigate = useNavigate();
 	const params = useParams({ strict: false });
@@ -11,20 +16,18 @@ export const Navigation = () => {
 
 	// Custom navigation logic for new slides
 	const getNextSlide = (current: number) => {
-		if (current === 5) return 51;
-		if (current === 51) return 52;
-		if (current === 52) return 53;
-		if (current === 53) return 6;
-		if (current < TOTAL_SLIDES - 1) return current + 1;
+		const currentIndex = slideOrder.indexOf(current);
+		if (currentIndex !== -1 && currentIndex < slideOrder.length - 1) {
+			return slideOrder[currentIndex + 1];
+		}
 		return null;
 	};
 
 	const getPrevSlide = (current: number) => {
-		if (current === 6) return 53;
-		if (current === 53) return 52;
-		if (current === 52) return 51;
-		if (current === 51) return 5;
-		if (current > 0) return current - 1;
+		const currentIndex = slideOrder.indexOf(current);
+		if (currentIndex > 0) {
+			return slideOrder[currentIndex - 1];
+		}
 		return null;
 	};
 
@@ -33,17 +36,12 @@ export const Navigation = () => {
 
 	// Calculate total slides including new ones
 	const getTotalSlides = () => {
-		return TOTAL_SLIDES + 3; // Adding slides 51, 52, 53
+		return slideOrder.length;
 	};
 
 	// Get current position in sequence
 	const getCurrentPosition = (current: number) => {
-		if (current <= 5) return current + 1;
-		if (current === 51) return 7; // After slide 5
-		if (current === 52) return 8; // After slide 51
-		if (current === 53) return 9; // After slide 52
-		if (current >= 6) return current + 4; // Adjust for 3 inserted slides
-		return current + 1;
+		return slideOrder.indexOf(current) + 1;
 	};
 
 	const [showHint, setShowHint] = useState(true);

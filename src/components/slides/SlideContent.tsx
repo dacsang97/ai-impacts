@@ -18,6 +18,10 @@ import { Slide16 } from "./Slide16";
 import { Slide51 } from "./Slide51";
 import { Slide52 } from "./Slide52";
 import { Slide53 } from "./Slide53";
+import { Slide101 } from "./Slide101";
+import { Slide102 } from "./Slide102";
+import { Slide103 } from "./Slide103";
+import { Slide104 } from "./Slide104";
 
 interface SlideContentProps {
 	slideNumber: number;
@@ -48,6 +52,14 @@ export const SlideContent = ({ slideNumber }: SlideContentProps) => {
 			return <Slide9 />;
 		case 10:
 			return <Slide10 />;
+		case 10.1:
+			return <Slide101 />;
+		case 10.2:
+			return <Slide102 />;
+		case 10.3:
+			return <Slide103 />;
+		case 10.4:
+			return <Slide104 />;
 		case 11:
 			return <Slide11 />;
 		case 12:
@@ -60,11 +72,11 @@ export const SlideContent = ({ slideNumber }: SlideContentProps) => {
 			return <Slide15 />;
 		case 16:
 			return <Slide16 />;
-		case 51:
+		case 5.1:
 			return <Slide51 />;
-		case 52:
+		case 5.2:
 			return <Slide52 />;
-		case 53:
+		case 5.3:
 			return <Slide53 />;
 		default:
 			return (
